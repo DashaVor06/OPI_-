@@ -1,0 +1,76 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 93
+  ClientWidth = 487
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Visible = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  object kolvo: TLabel
+    Left = 8
+    Top = 8
+    Width = 298
+    Height = 33
+    Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1080#1075#1088#1086#1082#1086#1074':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 320
+    Top = 17
+    Width = 16
+    Height = 35
+    Caption = '2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -29
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object up: TButton
+    Left = 342
+    Top = 19
+    Width = 18
+    Height = 17
+    Caption = #9650
+    TabOrder = 0
+    OnClick = upClick
+  end
+  object OK: TButton
+    Left = 382
+    Top = 19
+    Width = 35
+    Height = 33
+    Caption = #10004
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = OKClick
+  end
+  object down: TButton
+    Left = 342
+    Top = 35
+    Width = 18
+    Height = 17
+    Caption = #9660
+    TabOrder = 2
+    OnClick = downClick
+  end
+end

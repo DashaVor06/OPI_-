@@ -1,0 +1,53 @@
+unit settings;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm3 = class(TForm)
+    kolvo: TLabel;
+    up: TButton;
+    Label1: TLabel;
+    OK: TButton;
+    down: TButton;
+    procedure upClick(Sender: TObject);
+    procedure downClick(Sender: TObject);
+    procedure OKClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+implementation
+
+{$R *.dfm}
+
+uses gameInt;
+
+procedure TForm3.downClick(Sender: TObject);
+begin
+  if strtoint(label1.Caption)>2 then
+    label1.Caption:=inttostr(strtoint(label1.Caption)-1)
+end;
+
+
+procedure TForm3.upClick(Sender: TObject);
+begin
+  if strtoint(label1.Caption)<6 then
+    label1.Caption:=inttostr(strtoint(label1.Caption)+1)
+end;
+
+
+procedure TForm3.OKClick(Sender: TObject);
+begin
+  Form3.Visible:=false;
+
+end;
+
+end.
