@@ -103,7 +103,7 @@ begin
   skip:=0;
   choice:=0;
   vote:=1;
-  nbank:=164-10*NoP;
+  nbank:=128-10*NoP;
   player:=1;
   wrong:=0;
   setlength(points,NoP);
@@ -114,7 +114,7 @@ begin
   for i := 0 to NoP-1 do
   begin
     points[i] := 0;
-    mas_numbers[i] := i;
+    mas_numbers[i] := i+1;
   end;
 
 end;

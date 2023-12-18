@@ -1,7 +1,7 @@
 object Form5: TForm5
   Left = 0
   Top = 0
-  Caption = 'Form5'
+  Caption = 'Erudit'
   ClientHeight = 331
   ClientWidth = 353
   Color = clBtnFace
@@ -210,7 +210,7 @@ object Form5: TForm5
   end
   object pl4: TLabel
     Left = 76
-    Top = 168
+    Top = 159
     Width = 11
     Height = 25
     Caption = '1'
@@ -223,7 +223,7 @@ object Form5: TForm5
   end
   object pnum4: TLabel
     Left = 177
-    Top = 176
+    Top = 159
     Width = 11
     Height = 25
     Caption = '1'
@@ -236,7 +236,7 @@ object Form5: TForm5
   end
   object Lab14: TLabel
     Left = 194
-    Top = 168
+    Top = 159
     Width = 57
     Height = 25
     Caption = ','#1086#1095#1082#1080':'
@@ -249,7 +249,7 @@ object Form5: TForm5
   end
   object sc4: TLabel
     Left = 257
-    Top = 168
+    Top = 159
     Width = 11
     Height = 25
     Caption = '0'
@@ -262,7 +262,7 @@ object Form5: TForm5
   end
   object Lab4: TLabel
     Left = 93
-    Top = 168
+    Top = 159
     Width = 78
     Height = 25
     Caption = ') '#1048#1075#1088#1086#1082' '
@@ -275,7 +275,7 @@ object Form5: TForm5
   end
   object pl5: TLabel
     Left = 76
-    Top = 207
+    Top = 190
     Width = 11
     Height = 25
     Caption = '1'
@@ -288,7 +288,7 @@ object Form5: TForm5
   end
   object pnum5: TLabel
     Left = 177
-    Top = 207
+    Top = 190
     Width = 11
     Height = 25
     Caption = '1'
@@ -301,7 +301,7 @@ object Form5: TForm5
   end
   object Lab15: TLabel
     Left = 194
-    Top = 207
+    Top = 190
     Width = 57
     Height = 25
     Caption = ','#1086#1095#1082#1080':'
@@ -314,7 +314,7 @@ object Form5: TForm5
   end
   object sc5: TLabel
     Left = 257
-    Top = 207
+    Top = 190
     Width = 11
     Height = 25
     Caption = '0'
@@ -327,7 +327,7 @@ object Form5: TForm5
   end
   object Lab5: TLabel
     Left = 93
-    Top = 207
+    Top = 190
     Width = 78
     Height = 25
     Caption = ') '#1048#1075#1088#1086#1082' '
@@ -340,7 +340,7 @@ object Form5: TForm5
   end
   object pl6: TLabel
     Left = 76
-    Top = 238
+    Top = 221
     Width = 11
     Height = 25
     Caption = '1'
@@ -353,7 +353,7 @@ object Form5: TForm5
   end
   object pnum6: TLabel
     Left = 177
-    Top = 238
+    Top = 221
     Width = 11
     Height = 25
     Caption = '1'
@@ -366,7 +366,7 @@ object Form5: TForm5
   end
   object Lab16: TLabel
     Left = 194
-    Top = 238
+    Top = 221
     Width = 57
     Height = 25
     Caption = ','#1086#1095#1082#1080':'
@@ -379,7 +379,7 @@ object Form5: TForm5
   end
   object sc6: TLabel
     Left = 257
-    Top = 238
+    Top = 221
     Width = 11
     Height = 25
     Caption = '0'
@@ -392,7 +392,7 @@ object Form5: TForm5
   end
   object Lab6: TLabel
     Left = 93
-    Top = 238
+    Top = 221
     Width = 78
     Height = 25
     Caption = ') '#1048#1075#1088#1086#1082' '

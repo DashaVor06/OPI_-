@@ -1,4 +1,4 @@
-unit Unit4;
+Ôªøunit Unit4;
 
 interface
 
@@ -70,45 +70,45 @@ type
   end;
 
 const
-  alfovit = '¿≈»Œ”€›ﬁﬂ¡¬√ƒ∆«… ÀÃÕœ–—“‘’÷◊ÿŸ‹⁄';
+  alfovit = '–ê–ï–ò–û–£–´–≠–Æ–Ø–ë–í–ì–î–ñ–ó–ô–ö–õ–ú–ù–ü–†–°–¢–§–•–¶–ß–®–©–¨–™';
   nBukv = 32;
   nPBank = 10;
 
 var
   Form4: TForm4;
   bank: array [1 .. nBukv] of integer = (
+    10,
+    9,
     8,
+    10,
+    3,
+    2,
+    1,
+    1,
+    3,
+    3,
+    5,
+    3,
+    5,
+    2,
+    2,
+    4,
+    6,
+    4,
+    5,
     8,
-    8,
-    8,
-    8,
-    8,
-    8,
-    8,
-    8,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4
+    6,
+    6,
+    6,
+    5,
+    1,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1,
+    2
   );
   pBank: array of string;
   i, j: integer;
@@ -129,6 +129,8 @@ var
   sp1: array of boolean;
   sp2: array of boolean;
   mas_numbers: array of integer;
+  PoN: integer;
+  FlagFh, FlagFif: boolean;
 
 implementation
 
@@ -190,7 +192,15 @@ begin
   begin
     choice := 2;
     sp2[player - 1] := not sp2[player - 1];
-    fHelp.Visible := false
+    fHelp.Visible := false;
+    fif.Visible := false;
+    lBank1.Visible := true;
+    lBank2.Visible := true;
+    lBank3.Visible := true;
+    lBank4.Visible := true;
+    LBank5.Visible := true;
+    lbank6.Visible := true;
+    FlagFh := true
   end;
 end;
 
@@ -200,7 +210,9 @@ begin
   begin
     choice := 1;
     sp1[player - 1] := not sp1[player - 1];
-    fif.Visible := false
+    fif.Visible := false;
+    fHelp.Visible := false;
+    FlagFif := true;
   end;
 end;
 
@@ -244,7 +256,7 @@ begin
         nbank := nbank - 5;
         skip := 0;
         points[player - 1] := points[player - 1] - 2;
-        wrong := 0
+        wrong := 0;
       end
       else
       begin
@@ -283,7 +295,21 @@ begin
         Bufer := pBank[player - 1][i];
         pBank[player - 1][i] := pBank[strtoint(str[1]) - 1][j];
         pBank[strtoint(str[1]) - 1][j] := Bufer[1];
-        wrong := 0
+        wrong := 0;
+        case strtoint(str[1]) of
+          1:
+            lBank1.Caption := pBank[0];
+          2:
+            lBank2.Caption := pBank[1];
+          3:
+            lBank3.Caption := pBank[2];
+          4:
+            lBank4.Caption := pBank[3];
+          5:
+            LBank5.Caption := pBank[4];
+          6:
+            lbank6.Caption := pBank[5];
+        end;
       end
       else
       begin
@@ -310,21 +336,21 @@ begin
 
     if i = length(str) + 1 then
     begin
-      // ŒÚÍ˚‚‡ÂÏ Ì‡¯ ÒÎÓ‚‡¸ ‰Îˇ ˜ÚÂÌËˇ
+      // –û—Ç–∫—Ä—ã–≤–∞–µ–º –Ω–∞—à —Å–ª–æ–≤–∞—Ä—å –¥–ª—è —á—Ç–µ–Ω–∏—è
       Assignfile(words, 'C:\WordList.txt', CP_UTF8);
       Reset(words);
       exist := false;
 
-      // œÓÒÏ‡ÚË‚‡ÂÏ ‚ÒÂ ÒÎÓ‚‡ ‚ ÒÎÓ‚‡Â
+      // –ü—Ä–æ—Å–º–∞—Ç—Ä–∏–≤–∞–µ–º –≤—Å–µ —Å–ª–æ–≤–∞ –≤ —Å–ª–æ–≤–∞—Ä–µ
       while not Eof(words) do
       begin
         ReadLn(words, word);
-        // œÓ‚ÂÍ‡ ÒÎÓ‚‡ Ì‡ Ì‡ÎË˜ËÂ ‚ ÒÎÓ‚‡Â
+        // –ü—Ä–æ–≤–µ—Ä–∫–∞ —Å–ª–æ–≤–∞ –Ω–∞ –Ω–∞–ª–∏—á–∏–µ –≤ —Å–ª–æ–≤–∞—Ä–µ
         if str = word then
           exist := true;
       end;
 
-      // ÒÎÓ‚Ó ‚ ÒÎÓ‚‡¸, ‚˚‚Ó‰ Ì‡ ˝Í‡Ì ÒÎÓ‚‡
+      // —Å–ª–æ–≤–æ –≤ —Å–ª–æ–≤–∞—Ä—å, –≤—ã–≤–æ–¥ –Ω–∞ —ç–∫—Ä–∞–Ω —Å–ª–æ–≤–∞
       if exist = true then
       begin
         if str[1] = lastword[length(lastword)] then
@@ -366,6 +392,8 @@ begin
 
         StopGolos.Visible := true;
         golos := true;
+        Label6.Visible := false;
+        Label8.Visible := false;
         edit.Visible := false;
         fif.Visible := false;
         fHelp.Visible := false;
@@ -378,57 +406,69 @@ begin
       Oshibka.Visible := true
     end;
   end;
-  /// //////////////
-  /// //////////// ÔÓÏÓ˘¸ ‰Û„‡ ·‡ÌÍË
-  lBank1.Caption := pBank[0];
-  pScore1.Caption := inttostr(points[0]);
-  lBank2.Caption := pBank[1];
-  pScore2.Caption := inttostr(points[1]);
-  if NoP > 2 then
-  begin
-    lBank3.Caption := pBank[2];
-    pscore3.Caption := inttostr(points[2])
-  end;
-  if NoP > 3 then
-  begin
-    lBank4.Caption := pBank[3];
-    pscore4.Caption := inttostr(points[3])
-  end;
-  if NoP > 4 then
-  begin
-    LBank5.Caption := pBank[4];
-    pscore5.Caption := inttostr(points[4])
-  end;
-  if NoP > 5 then
-  begin
-    lbank6.Caption := pBank[5];
-    pscore6.Caption := inttostr(points[5])
+
+  case player of
+    1:
+      begin
+        lBank1.Caption := pBank[0];
+        pScore1.Caption := inttostr(points[0]);
+      end;
+    2:
+      begin
+        lBank2.Caption := pBank[1];
+        pScore2.Caption := inttostr(points[1]);
+      end;
+    3:
+      begin
+        lBank3.Caption := pBank[2];
+        pscore3.Caption := inttostr(points[2]);
+      end;
+    4:
+      begin
+        lBank4.Caption := pBank[3];
+        pscore4.Caption := inttostr(points[3])
+      end;
+    5:
+      begin
+        LBank5.Caption := pBank[4];
+        pscore5.Caption := inttostr(points[4])
+      end;
+    6:
+      begin
+        lbank6.Caption := pBank[5];
+        pscore6.Caption := inttostr(points[5])
+      end;
   end;
 
   if not golos then
   begin
-
+    edit.text := '';
     if wrong = 5 then
     begin
-      edit.text := '';
       player := player + 1;
       if player > NoP then
         player := 1;
       wrong := 0;
       choice := 0;
       inc(skip);
+      if flagfh or flagfif then
+        dec(player);
+      flagfh:=false;
+      flagfif:=false;
     end
     else if wrong = 0 then
     begin
-      edit.text := '';
       player := player + 1;
       if player > NoP then
         player := 1;
       choice := 0;
+      if flagfh or flagfif then
+        dec(player);
+      flagfh:=false;
+      flagfif:=false;
     end
-    else
-      edit.text := '';
   end;
+  pNum.Caption := inttostr(player);
 
   if skip = NoP then
   begin
@@ -440,11 +480,11 @@ begin
       begin
         if points[j - 1] > points[j] then
         begin
-          // Œ˜ÍË
+          // –û—á–∫–∏
           points[j] := points[j] + points[j - 1];
           points[j - 1] := points[j] - points[j - 1];
           points[j] := points[j] - points[j - 1];
-          // ÃÂÒÚ‡ Ë„ÓÍÓ‚
+          // –ú–µ—Å—Ç–∞ –∏–≥—Ä–æ–∫–æ–≤
           mas_numbers[j] := mas_numbers[j] + mas_numbers[j - 1];
           mas_numbers[j - 1] := mas_numbers[j] - mas_numbers[j - 1];
           mas_numbers[j] := mas_numbers[j] - mas_numbers[j - 1];
@@ -452,19 +492,114 @@ begin
       end;
     end;
 
+    PoN := NoP;
+    i := 1;
+    Form5.pnum1.Caption := inttostr(mas_numbers[NoP - 1]);
+    Form5.sc1.Caption := inttostr(points[NoP - 1]);
+    dec(NoP);
+
+    if points[NoP] <> points[NoP - 1] then
+      inc(i);
+
+    Form5.pnum2.Caption := inttostr(mas_numbers[NoP - 1]);
+    Form5.sc2.Caption := inttostr(points[NoP - 1]);
+    Form5.pl2.Caption := inttostr(i);
+    dec(NoP);
+
+    if PoN > 2 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum3.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc3.Caption := inttostr(points[NoP - 1]);
+      Form5.pl3.Caption := inttostr(i);
+      Form5.pnum3.Visible := true;
+      Form5.sc3.Visible := true;
+      Form5.pl3.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 3 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum4.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc4.Caption := inttostr(points[NoP - 1]);
+      Form5.pl4.Caption := inttostr(i);
+      Form5.pnum4.Visible := true;
+      Form5.sc4.Visible := true;
+      Form5.pl4.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 4 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum5.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc5.Caption := inttostr(points[NoP - 1]);
+      Form5.pl5.Caption := inttostr(i);
+      Form5.pnum5.Visible := true;
+      Form5.sc5.Visible := true;
+      Form5.pl5.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 5 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum6.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc6.Caption := inttostr(points[NoP - 1]);
+      Form5.pl6.Caption := inttostr(i);
+      Form5.pnum6.Visible := true;
+      Form5.sc6.Visible := true;
+      Form5.pl6.Visible := true;
+      dec(NoP);
+    end;
   end;
-  pNum.Caption := inttostr(player);
 
-  if sp1[player - 1] = false then
-    fif.Visible := true
-  else
-    fif.Visible := false;
+  if not golos then
+  begin
+    if sp1[player - 1] = false then
+      fif.Visible := true
+    else
+      fif.Visible := false;
 
-  if sp2[player - 1] = false then
-    fHelp.Visible := true
-  else
-    fHelp.Visible := false;
+    if sp2[player - 1] = false then
+      fHelp.Visible := true
+    else
+      fHelp.Visible := false;
 
+    if not FlagFh then
+    begin
+      lBank1.Visible := false;
+      lBank2.Visible := false;
+      lBank3.Visible := false;
+      lBank4.Visible := false;
+      LBank5.Visible := false;
+      lbank6.Visible := false;
+    end
+    else
+      fif.Visible:=false;
+
+    if flagFif then
+      fHelp.Visible:=false;
+
+    case player of
+      1:
+        lBank1.Visible := true;
+      2:
+        lBank2.Visible := true;
+      3:
+        lBank3.Visible := true;
+      4:
+        lBank4.Visible := true;
+      5:
+        LBank5.Visible := true;
+      6:
+        lbank6.Visible := true;
+    end;
+  end;
+
+  vote := 1;
   Label10.Caption := lastword;
 end;
 
@@ -506,34 +641,37 @@ begin
   CheckBox4.Visible := false;
   CheckBox5.Visible := false;
   CheckBox6.Visible := false;
-
-  edit.Visible := true;
-  fif.Visible := true;
-  fHelp.Visible := true;
-
-  lBank1.Caption := pBank[0];
-  pScore1.Caption := inttostr(points[0]);
-  lBank2.Caption := pBank[1];
-  pScore2.Caption := inttostr(points[1]);
-  if NoP > 2 then
-  begin
-    lBank3.Caption := pBank[2];
-    pscore3.Caption := inttostr(points[2])
-  end;
-  if NoP > 3 then
-  begin
-    lBank4.Caption := pBank[3];
-    pscore4.Caption := inttostr(points[3])
-  end;
-  if NoP > 4 then
-  begin
-    LBank5.Caption := pBank[4];
-    pscore5.Caption := inttostr(points[4])
-  end;
-  if NoP > 5 then
-  begin
-    lbank6.Caption := pBank[5];
-    pscore6.Caption := inttostr(points[5])
+  case player of
+    1:
+      begin
+        lBank1.Caption := pBank[0];
+        pScore1.Caption := inttostr(points[0]);
+      end;
+    2:
+      begin
+        lBank2.Caption := pBank[1];
+        pScore2.Caption := inttostr(points[1]);
+      end;
+    3:
+      begin
+        lBank3.Caption := pBank[2];
+        pscore3.Caption := inttostr(points[2]);
+      end;
+    4:
+      begin
+        lBank4.Caption := pBank[3];
+        pscore4.Caption := inttostr(points[3])
+      end;
+    5:
+      begin
+        LBank5.Caption := pBank[4];
+        pscore5.Caption := inttostr(points[4])
+      end;
+    6:
+      begin
+        lbank6.Caption := pBank[5];
+        pscore6.Caption := inttostr(points[5])
+      end;
   end;
 
   if wrong = 5 then
@@ -558,9 +696,138 @@ begin
     Oshibka.Visible := true
   end;
 
+  CheckBox1.Checked := false;
+  CheckBox2.Checked := false;
+  CheckBox3.Checked := false;
+  CheckBox4.Checked := false;
+  CheckBox5.Checked := false;
+  CheckBox6.Checked := false;
+
   pNum.Caption := inttostr(player);
   StopGolos.Visible := false;
+  if sp1[player - 1] = false then
+    fif.Visible := true
+  else
+    fif.Visible := false;
+
+  if sp2[player - 1] = false then
+    fHelp.Visible := true
+  else
+    fHelp.Visible := false;
+
+  lBank1.Visible := false;
+  lBank2.Visible := false;
+  lBank3.Visible := false;
+  lBank4.Visible := false;
+  LBank5.Visible := false;
+  lbank6.Visible := false;
+
+  case player of
+    1:
+      lBank1.Visible := true;
+    2:
+      lBank2.Visible := true;
+    3:
+      lBank3.Visible := true;
+    4:
+      lBank4.Visible := true;
+    5:
+      LBank5.Visible := true;
+    6:
+      lbank6.Visible := true;
+  end;
+
+  Label6.Visible := true;
+  Label8.Visible := true;
   Label10.Caption := lastword;
+  edit.Visible := true;
+  vote := 1;
+
+  if skip = NoP then
+  begin
+    Form4.Visible := false;
+    Form5.Visible := true;
+    for i := 0 to NoP - 1 do
+    begin
+      for j := NoP - 1 downto i + 1 do
+      begin
+        if points[j - 1] > points[j] then
+        begin
+          // –û—á–∫–∏
+          points[j] := points[j] + points[j - 1];
+          points[j - 1] := points[j] - points[j - 1];
+          points[j] := points[j] - points[j - 1];
+          // –ú–µ—Å—Ç–∞ –∏–≥—Ä–æ–∫–æ–≤
+          mas_numbers[j] := mas_numbers[j] + mas_numbers[j - 1];
+          mas_numbers[j - 1] := mas_numbers[j] - mas_numbers[j - 1];
+          mas_numbers[j] := mas_numbers[j] - mas_numbers[j - 1];
+        end;
+      end;
+    end;
+
+    PoN := NoP;
+    i := 1;
+    Form5.pnum1.Caption := inttostr(mas_numbers[NoP - 1]);
+    Form5.sc1.Caption := inttostr(points[NoP - 1]);
+    dec(NoP);
+
+    if points[NoP] <> points[NoP - 1] then
+      inc(i);
+
+    Form5.pnum2.Caption := inttostr(mas_numbers[NoP - 1]);
+    Form5.sc2.Caption := inttostr(points[NoP - 1]);
+    Form5.pl2.Caption := inttostr(i);
+    dec(NoP);
+
+    if PoN > 2 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum3.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc3.Caption := inttostr(points[NoP - 1]);
+      Form5.pl3.Caption := inttostr(i);
+      Form5.pnum3.Visible := true;
+      Form5.sc3.Visible := true;
+      Form5.pl3.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 3 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum4.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc4.Caption := inttostr(points[NoP - 1]);
+      Form5.pl4.Caption := inttostr(i);
+      Form5.pnum4.Visible := true;
+      Form5.sc4.Visible := true;
+      Form5.pl4.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 4 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum5.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc5.Caption := inttostr(points[NoP - 1]);
+      Form5.pl5.Caption := inttostr(i);
+      Form5.pnum5.Visible := true;
+      Form5.sc5.Visible := true;
+      Form5.pl5.Visible := true;
+      dec(NoP);
+    end;
+    if PoN > 5 then
+    begin
+      if points[NoP] <> points[NoP - 1] then
+        inc(i);
+      Form5.pnum6.Caption := inttostr(mas_numbers[NoP - 1]);
+      Form5.sc6.Caption := inttostr(points[NoP - 1]);
+      Form5.pl6.Caption := inttostr(i);
+      Form5.pnum6.Visible := true;
+      Form5.sc6.Visible := true;
+      Form5.pl6.Visible := true;
+      dec(NoP);
+    end;
+  end;
 end;
 
 end.

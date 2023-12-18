@@ -1,7 +1,7 @@
 object Form4: TForm4
   Left = 0
   Top = 0
-  Caption = 'Form4'
+  Caption = 'Erudit'
   ClientHeight = 423
   ClientWidth = 1234
   Color = clBtnFace
@@ -67,7 +67,7 @@ object Form4: TForm4
   end
   object lBank1: TLabel
     Left = 656
-    Top = 37
+    Top = 38
     Width = 8
     Height = 29
     Font.Charset = DEFAULT_CHARSET
@@ -127,6 +127,7 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object Label7: TLabel
     Left = 597
@@ -179,6 +180,7 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object L13: TLabel
     Left = 597
@@ -233,6 +235,7 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object L14: TLabel
     Left = 949
@@ -287,6 +290,7 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object L15: TLabel
     Left = 949
@@ -341,6 +345,7 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    Visible = False
   end
   object L16: TLabel
     Left = 949
